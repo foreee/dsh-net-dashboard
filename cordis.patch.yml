@@ -1,0 +1,9 @@
+# dsh-net-dashboard bundle patch.
+#
+# Applied as a profile bundle layer (the package.json `dsh.bundle.patch`
+# field). It inserts one Loader entry whose host half mounts the network
+# snapshot HTTP routes; the browser half is discovered from the same package's
+# `dsh.client` declaration by client-modules.
+- insert:
+    - id: net-dashboard
+      name: dsh-net-dashboard

@@ -1,0 +1,59 @@
+{
+  "name": "dsh-net-dashboard",
+  "description": "网络巡检看板：侧边栏实时呈现本机网络质量（IP/MAC、流量速率、会话数、延迟）｜Network inspection dashboard: live local network quality in the DSH sidebar.",
+  "version": "0.1.0",
+  "icon": "icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "engines": {
+      "dsh": ">=0.2.0-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "network",
+    "monitor",
+    "dashboard",
+    "latency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foreee/dsh-net-dashboard.git"
+  },
+  "homepage": "https://github.com/foreee/dsh-net-dashboard#readme",
+  "author": "foreee",
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.2"
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "screenshots.json",
+    "assets/*.png",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}
